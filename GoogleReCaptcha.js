@@ -31,6 +31,7 @@ const GoogleReCaptcha = ({
   style,
   url,
   languageCode,
+  cancelButtonColor = "#000000",
   cancelButtonText = "Cancel"
 }) => {
   const generateTheWebViewContent = siteKey => {
@@ -58,7 +59,7 @@ const GoogleReCaptcha = ({
 				</script>
 				<style>
 					.btn {
-						background-color: #c60710;
+						background-color: ${cancelButtonColor};
 						color: #ffffff; padding: 8px 32px; margin-top: 8px;
 						border: none; border-radius: 25px; font-weight: bold;
 					}
