@@ -23,7 +23,9 @@ class ConfirmGoogleCaptcha extends Component {
       baseUrl,
       languageCode,
       onMessage,
-      cancelButtonText
+      cancelButtonText,
+      style,
+      cancelButtonColor
     } = this.props;
     return (
       <Modal
@@ -38,11 +40,13 @@ class ConfirmGoogleCaptcha extends Component {
       >
         <View style={styles.wrapper}>
           <GoogleReCaptcha
+            style={style}
             url={baseUrl}
             siteKey={siteKey}
             onMessage={onMessage}
             languageCode={languageCode}
             cancelButtonText={cancelButtonText}
+            cancelButtonColor={cancelButtonColor}
           />
         </View>
       </Modal>
@@ -71,6 +75,8 @@ ConfirmGoogleCaptcha.propTypes = {
   baseUrl: PropTypes.string,
   onMessage: PropTypes.func,
   languageCode: PropTypes.string,
-  cancelButtonText: PropTypes.string
+  cancelButtonText: PropTypes.string,
+  cancelButtonColor: PropTypes.string,
+  style: PropTypes.object
 };
 export default ConfirmGoogleCaptcha;
